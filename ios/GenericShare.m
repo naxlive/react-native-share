@@ -55,7 +55,7 @@
         NSError *error = [NSError errorWithDomain:@"com.rnshare" code:1 userInfo:userInfo];
 
         NSLog(@"%@", errorMessage);
-        failureCallback(error);
+        // failureCallback(error);
 
         NSString *escapedString = [options[@"message"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
 
@@ -67,6 +67,15 @@
         if ([options[@"social"] isEqualToString:@"facebook"]) {
           NSString *URL = [NSString stringWithFormat:@"https://www.facebook.com/sharer/sharer.php?u=%@", options[@"url"]];
           [self openScheme:URL];
+        }
+
+        if ([options[@"social"] isEqualToString:@"line"]) {
+          NSString *linestr = [NSString stringWithFormat:@"line://msg/text/?%@", options[@"url"]];
+          NSURL *lineURL = [NSURL URLWithString:[linestr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+          if ([[UIApplication sharedApplication] canOpenURL:lineURL]) {
+                [[UIApplication sharedApplication] openURL:lineURL];
+                successCallback(@[]);
+          }
         }
 
       }
