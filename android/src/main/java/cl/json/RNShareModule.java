@@ -67,7 +67,8 @@ public class RNShareModule extends ReactContextBaseJavaModule implements Activit
         messenger,
         snapchat,
         sms,
-        linkedin;
+        linkedin,
+        line;
 
 
         public static ShareIntent getShareClass(String social, ReactApplicationContext reactContext) {
@@ -99,6 +100,8 @@ public class RNShareModule extends ReactContextBaseJavaModule implements Activit
                     return new MessengerShare(reactContext);
                 case linkedin:
                     return new LinkedinShare(reactContext);
+                case line:
+                    return new LineShare(reactContext)
                 default:
                     return null;
             }
