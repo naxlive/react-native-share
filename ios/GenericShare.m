@@ -54,6 +54,7 @@
         NSDictionary *userInfo = @{NSLocalizedFailureReasonErrorKey: NSLocalizedString(errorMessage, nil)};
         NSError *error = [NSError errorWithDomain:@"com.rnshare" code:1 userInfo:userInfo];
 
+        NSLog(@"ERROR MESSAGE");
         NSLog(@"%@", errorMessage);
         // failureCallback(error);
 
