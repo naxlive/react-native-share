@@ -118,7 +118,7 @@ RCT_EXPORT_METHOD(shareSingle:(NSDictionary *)options
             GenericShare *shareCtl = [[GenericShare alloc] init];
             [shareCtl shareSingle:options failureCallback: failureCallback successCallback: successCallback serviceType: SLServiceTypeTwitter inAppBaseUrl:@"twitter://"];
         } else if([social isEqualToString:@"line"]) {
-            NSLog(@"TRY OPEN Twitter");
+            NSLog(@"TRY OPEN LINE");
             GenericShare *shareCtl = [[GenericShare alloc] init];
             [shareCtl shareSingle:options failureCallback: failureCallback successCallback: successCallback serviceType: SLServiceTypeTwitter inAppBaseUrl:@"twitter://"];
         } else if([social isEqualToString:@"googleplus"]) {
