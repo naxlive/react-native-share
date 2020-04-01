@@ -101,7 +101,7 @@ public class RNShareModule extends ReactContextBaseJavaModule implements Activit
                 case linkedin:
                     return new LinkedinShare(reactContext);
                 case line:
-                    return new LineShare(reactContext)
+                    return new GenericShare(reactContext);
                 default:
                     return null;
             }
